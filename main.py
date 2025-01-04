@@ -49,7 +49,7 @@ completed_queue = queue.Queue()  # For completed signups
 def get_verification_code(email_address, password, test_email, worker_id):
     """Get verification code from email - single attempt"""
     try:
-        mail = imaplib.IMAP4_SSL("imap.gmail.com")
+        mail = imaplib.IMAP4_SSL(imap_server)
         mail.login(email_address, password)
         mail.select("inbox")
 
@@ -248,7 +248,7 @@ with open("config.json", "r") as f:
 gmail_address = config["imap_username"]
 gmail_password = config["imap_password"]
 email_suffix = config["email_suffix"]
-
+imap_server = config["imap_server"]
 
 def generate_email():
     """Generate a random email address"""
