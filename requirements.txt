@@ -1,0 +1,4 @@
+selenium>=4.16.0
+faker>=22.0.0
+colorama>=0.4.6
+webdriver_manager>=4.0.1 
